@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2736753191068576415}
   - component: {fileID: 4012174195725230014}
   - component: {fileID: 8106622849017937629}
+  - component: {fileID: 5411714922078447538}
   m_Layer: 5
   m_Name: Banknote
   m_TagString: Untagged
@@ -64,6 +65,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619c5e733a727404bbc7d38ec0594f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5411714922078447538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2736753191068576414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717a02054ef2699498e6bd4234fd7995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _containerSource: 2
 --- !u!1 &2736753191072023241
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.07724518, g: 0.6320754, b: 0.07453719, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

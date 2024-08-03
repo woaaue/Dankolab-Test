@@ -1,10 +1,12 @@
 using TMPro;
+using Zenject;
 using UnityEngine;
 
 public sealed class LevelView : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _currentLevel;
-    [SerializeField] private UpgradeController _upgradeController;
+    
+    [Inject] private UpgradeController _upgradeController;
 
     private void Start()
     {

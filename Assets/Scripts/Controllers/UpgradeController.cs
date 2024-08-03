@@ -1,11 +1,12 @@
 using System;
+using Zenject;
 using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
 
 public sealed class UpgradeController : MonoBehaviour
 {
-    [SerializeField] private MoneyController _moneyController;
+    [Inject] private MoneyController _moneyController;
 
     public event Action UpgradeSettingsChanged;
 

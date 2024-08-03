@@ -1,10 +1,12 @@
 using TMPro;
+using Zenject;
 using UnityEngine;
 
 public sealed class MoneyView : MonoBehaviour
 {
-    [SerializeField] private MoneyController _controller;
     [SerializeField] private TextMeshProUGUI _countMoney;
+
+    [Inject] private MoneyController _controller;
 
     private void Start()
     {

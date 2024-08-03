@@ -1,4 +1,5 @@
 using TMPro;
+using Zenject;
 using UnityEngine;
 using JetBrains.Annotations;
 
@@ -6,8 +7,10 @@ public sealed class ButtonUpgrade : MonoBehaviour
 {
     [SerializeField] private GameObject _buttonUpgrade;
     [SerializeField] private TextMeshProUGUI _priceUpgrade;
-    [SerializeField] private MoneyController _moneyController;
-    [SerializeField] private UpgradeController _upgradeController;
+    
+    [Inject] private MoneyController _moneyController;
+    [Inject] private UpgradeController _upgradeController;
+
 
     private void Start()
     {
@@ -23,6 +26,7 @@ public sealed class ButtonUpgrade : MonoBehaviour
     public void Click()
     {
         _upgradeController.BuyUpgrade();
+        ButtonStateSwitcher();
     }
 
     private void ButtonStateSwitcher(int currentMoney = 0)
