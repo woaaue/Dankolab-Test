@@ -1456,6 +1456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd272d93afd2e0458ab4df89c0e4db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 1260902227}
   _countAddMoney: {fileID: 1948807016}
   _canvasRectTransform: {fileID: 304553044}
 --- !u!1 &1279050680

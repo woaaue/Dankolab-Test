@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 
 public sealed class ButtonClicker : MonoBehaviour, IPointerClickHandler
 {
+    [SerializeField] private Image _image;
     [SerializeField] private TextMeshProUGUI _countAddMoney;
     [SerializeField] private RectTransform _canvasRectTransform;
 
@@ -18,7 +19,7 @@ public sealed class ButtonClicker : MonoBehaviour, IPointerClickHandler
 
     private void Start()
     {
-        GetComponent<Image>().alphaHitTestMinimumThreshold = _alphaTreshHold;
+        _image.alphaHitTestMinimumThreshold = _alphaTreshHold;
 
         OnMoneyPerClickChanged();
         _upgradeController.UpgradeSettingsChanged += OnMoneyPerClickChanged;

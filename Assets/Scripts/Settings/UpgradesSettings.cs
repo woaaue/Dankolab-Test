@@ -11,9 +11,9 @@ public sealed class UpgradesSettings : ScriptableObject
 {
     private const string PATH = "Assets/Resources/Settings/UpgradeSettings/";
 
-    [field: SerializeField] public int _countUpgrades { get; private set; }
-    [field: SerializeField] public int _countMoneyPerClick { get; private set; }
-    [field: SerializeField] public float _coefficientPrice { get; private set; }
+    [field: SerializeField] public int CountUpgrades { get; private set; }
+    [field: SerializeField] public int CountMoneyPerClick { get; private set; }
+    [field: SerializeField] public float CoefficientPrice { get; private set; }
 
     [field: SerializeField] public List<UpgradeSettings> Upgrades { get; private set; }
 
@@ -48,14 +48,14 @@ public sealed class UpgradesSettings : ScriptableObject
         var moneyPerClick = 1;
         Upgrades = new List<UpgradeSettings>();
 
-        for (int i = 0; i <= _countUpgrades; i++)
+        for (int i = 0; i <= CountUpgrades; i++)
         {
             var upgradeSettings = CreateInstance<UpgradeSettings>();
 
             upgradeSettings.UpgradeInfo = new UpgradeInfo();
             upgradeSettings.UpgradeInfo.Level = i;
-            upgradeSettings.UpgradeInfo.PayPerClick = i == 0 ? moneyPerClick : moneyPerClick += _countMoneyPerClick;
-            upgradeSettings.UpgradeInfo.UpgradePrice = Mathf.RoundToInt((i + 1) * 10 * _coefficientPrice);
+            upgradeSettings.UpgradeInfo.PayPerClick = i == 0 ? moneyPerClick : moneyPerClick += CountMoneyPerClick;
+            upgradeSettings.UpgradeInfo.UpgradePrice = Mathf.RoundToInt((i + 1) * 10 * CoefficientPrice);
 
             string assetPath = $"{PATH}UpgradeSettings_{i}.asset";
 

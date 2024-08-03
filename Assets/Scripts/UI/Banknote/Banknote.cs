@@ -5,7 +5,7 @@ public sealed class Banknote : MonoBehaviour
 {
     [SerializeField] private BanknoteAnimation _animation;
 
-    [Inject] BanknoteController _pool;
+    [Inject] BanknoteController _banknoteController;
 
     private void OnEnable()
     {
@@ -24,6 +24,6 @@ public sealed class Banknote : MonoBehaviour
 
     private void OnSequenceCompleted()
     {
-        _pool.Pool.Release(this);
+        _banknoteController.Pool.Release(this);
     }
 }

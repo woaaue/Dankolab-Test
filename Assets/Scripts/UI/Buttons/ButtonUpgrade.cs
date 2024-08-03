@@ -11,7 +11,6 @@ public sealed class ButtonUpgrade : MonoBehaviour
     [Inject] private MoneyController _moneyController;
     [Inject] private UpgradeController _upgradeController;
 
-
     private void Start()
     {
         _moneyController.MoneyChanged += ButtonStateSwitcher;

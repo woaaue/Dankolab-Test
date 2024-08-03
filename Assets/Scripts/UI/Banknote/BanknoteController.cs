@@ -35,7 +35,6 @@ public sealed class BanknoteController : MonoBehaviour
             banknote.Setup(GetDirection());
             banknote.gameObject.transform.localPosition = _position;
             banknote.gameObject.SetActive(true);
-            Debug.Log("spawn");
         },
         banknote =>
         {

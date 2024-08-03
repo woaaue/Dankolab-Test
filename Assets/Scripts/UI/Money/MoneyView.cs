@@ -1,5 +1,6 @@
 using TMPro;
 using Zenject;
+using System.Text;
 using UnityEngine;
 
 public sealed class MoneyView : MonoBehaviour
@@ -7,11 +8,14 @@ public sealed class MoneyView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _countMoney;
 
     [Inject] private MoneyController _controller;
+    private StringBuilder _countMoneyText;
 
     private void Start()
     {
+        _countMoneyText = new StringBuilder();
+
         _controller.MoneyChanged += OnCountMoneyChanged;
-        _countMoney.text = _controller.GetMoney().ToString();
+        OnCountMoneyChanged(_controller.GetMoney());
     }
 
     private void OnDestroy()
@@ -21,6 +25,9 @@ public sealed class MoneyView : MonoBehaviour
 
     private void OnCountMoneyChanged(int value)
     {
-        _countMoney.text = value.ToString();
+        _countMoneyText.Clear();
+        _countMoneyText.Append(value);
+
+        _countMoney.text = _countMoneyText.ToString();
     }
 }
