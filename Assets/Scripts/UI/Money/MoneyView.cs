@@ -12,7 +12,7 @@ public sealed class MoneyView : MonoBehaviour
         _countMoney.text = _controller.GetMoney().ToString();
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         _controller.MoneyChanged -= OnCountMoneyChanged;
     }
