@@ -13,10 +13,15 @@ public sealed class MoneyController : MonoBehaviour
         MoneyChanged?.Invoke(GetMoney());
     }
 
-    public void RemoveMoney(int value)
+    public bool TryRemoveMoney(int value)
     {
         if (_bank.TryDecreaseMoney(value))
+        {
             MoneyChanged?.Invoke(GetMoney());
+            return true;
+        }
+
+        return false;
     }
 
     public int GetMoney() => _bank.CurrentValue;

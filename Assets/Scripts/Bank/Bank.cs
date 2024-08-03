@@ -12,5 +12,14 @@ public sealed class Bank
         CurrentValue += value;
     }
 
-    public bool TryDecreaseMoney(int value) => CurrentValue - value >= 0;
+    public bool TryDecreaseMoney(int value)
+    {
+        if (CurrentValue - value >= 0)
+        {
+            CurrentValue -= value;
+            return true;
+        }
+
+        return false;
+    }
 }
