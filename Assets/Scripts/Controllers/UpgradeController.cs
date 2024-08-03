@@ -21,7 +21,7 @@ public sealed class UpgradeController : MonoBehaviour
     {
         if (_moneyController.TryRemoveMoney(GetPriceUpgrade()))
         {
-            _levelSystem.RaiseLevel();
+            _levelSystem.IncreaseLevel();
             UpgradeSettingsChanged?.Invoke();
         }
     }
