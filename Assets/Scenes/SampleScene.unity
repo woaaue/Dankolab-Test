@@ -731,74 +731,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: -100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &634397133
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 634397134}
-  - component: {fileID: 634397135}
-  - component: {fileID: 634397136}
-  m_Layer: 0
-  m_Name: BanknotePool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &634397134
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634397133}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1266710146}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &634397135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634397133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a694a1b916d9a77409fa2b1799d4d591, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: 4012174195725230014, guid: 054c4394f7fe9db43b3f014b8baadde1, type: 3}
-  _minPoolSize: 10
-  _maxPoolSize: 20
-  _parent: {fileID: 304553044}
-  _pacifier: {fileID: 1405464200}
---- !u!114 &634397136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634397133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0166d8ff8d905b048b2448179e1f5d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _components:
-  - {fileID: 634397135}
-  _identifier: 
-  _useSceneContext: 0
-  _context: {fileID: 0}
-  _bindType: 0
 --- !u!1 &724178846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,38 +1470,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _countAddMoney: {fileID: 1948807016}
   _canvasRectTransform: {fileID: 304553044}
---- !u!1 &1266710145
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1266710146}
-  m_Layer: 0
-  m_Name: Pools
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1266710146
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266710145}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 226.99553, y: 410.64453, z: -11.12353}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 634397134}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1279050680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,7 +1684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1645456386}
-  - component: {fileID: 1645456387}
+  - component: {fileID: 1645456389}
   - component: {fileID: 1645456388}
   m_Layer: 0
   m_Name: BanknoteController
@@ -1808,19 +1708,6 @@ Transform:
   m_Father: {fileID: 1279050681}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1645456387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645456385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c8bc9cd92c1a541b29064709344c87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _canvas: {fileID: 304553044}
 --- !u!114 &1645456388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1834,11 +1721,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _components:
-  - {fileID: 1645456387}
+  - {fileID: 1645456389}
   _identifier: 
   _useSceneContext: 0
   _context: {fileID: 0}
   _bindType: 0
+--- !u!114 &1645456389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645456385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41648fbf30723cb46be6cb32a2814bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 4012174195725230014, guid: 054c4394f7fe9db43b3f014b8baadde1, type: 3}
+  _minPoolSize: 10
+  _maxPoolSize: 20
+  _parent: {fileID: 304553044}
+  _pacifier: {fileID: 1405464200}
 --- !u!1 &1948807014
 GameObject:
   m_ObjectHideFlags: 0

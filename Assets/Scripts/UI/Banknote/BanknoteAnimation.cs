@@ -23,6 +23,6 @@ public sealed class BanknoteAnimation : MonoBehaviour
 
     public void OnEnable()
     {
-        _sequence.Restart();
+        _sequence.Play();
     }
 }

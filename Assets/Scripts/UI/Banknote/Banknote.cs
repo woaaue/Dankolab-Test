@@ -5,7 +5,7 @@ public sealed class Banknote : MonoBehaviour
 {
     [SerializeField] private BanknoteAnimation _animation;
 
-    [Inject] BanknotePool _pool;
+    [Inject] BanknoteController _pool;
 
     private void OnEnable()
     {

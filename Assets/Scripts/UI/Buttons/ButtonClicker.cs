@@ -9,10 +9,10 @@ public sealed class ButtonClicker : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private TextMeshProUGUI _countAddMoney;
     [SerializeField] private RectTransform _canvasRectTransform;
-    
+
+    [Inject] private BanknoteController _banknoteController;
     [Inject] private MoneyController _moneyController;
     [Inject] private UpgradeController _upgradeController;
-    [Inject] private BanknoteController _banknoteController;
 
     private float _alphaTreshHold = 0.1f;
 
@@ -47,7 +47,7 @@ public sealed class ButtonClicker : MonoBehaviour, IPointerClickHandler
             out localPoint
         );
 
-        _banknoteController.SpawnBanknote(localPoint);
+        _banknoteController.SetSpawnPosition(localPoint);
     }
 
     private void OnMoneyPerClickChanged()

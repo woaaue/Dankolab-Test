@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Pool;
 
-public sealed class BanknotePool : MonoBehaviour
+public sealed class BanknoteController : MonoBehaviour
 {
     [SerializeField] private Banknote _prefab;
     [SerializeField] private int _minPoolSize;
@@ -11,22 +11,29 @@ public sealed class BanknotePool : MonoBehaviour
 
     public ObjectPool<Banknote> Pool { get; private set; }
 
+    private Vector2 _position;
+
     public void Start()
     {
         CreatePool();
+    }
+
+    public void SetSpawnPosition(Vector2 position)
+    {
+        _position = position;
+        Pool.Get();
     }
 
     private void CreatePool()
     {
         Pool = new ObjectPool<Banknote>(() =>
         {
-            var banknote = Instantiate(_prefab, _parent);
-            banknote.Setup(GetDirection());
-
-            return banknote;
+            return Instantiate(_prefab, _parent);
         },
         banknote =>
         {
+            banknote.Setup(GetDirection());
+            banknote.gameObject.transform.localPosition = _position;
             banknote.gameObject.SetActive(true);
         },
         banknote =>
