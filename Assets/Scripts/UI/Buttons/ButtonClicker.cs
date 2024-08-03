@@ -1,6 +1,7 @@
 using TMPro;
 using Zenject;
 using UnityEngine;
+using UnityEngine.UI;
 using JetBrains.Annotations;
 using UnityEngine.EventSystems;
 
@@ -13,8 +14,12 @@ public sealed class ButtonClicker : MonoBehaviour, IPointerClickHandler
     [Inject] private UpgradeController _upgradeController;
     [Inject] private BanknoteController _banknoteController;
 
+    private float _alphaTreshHold = 0.1f;
+
     private void Start()
     {
+        GetComponent<Image>().alphaHitTestMinimumThreshold = _alphaTreshHold;
+
         OnMoneyPerClickChanged();
         _upgradeController.UpgradeSettingsChanged += OnMoneyPerClickChanged;
     }
@@ -47,6 +52,6 @@ public sealed class ButtonClicker : MonoBehaviour, IPointerClickHandler
 
     private void OnMoneyPerClickChanged()
     {
-        _countAddMoney.text = _upgradeController.GetMoneyPerClick().ToString();
+        _countAddMoney.text = $"+ {_upgradeController.GetMoneyPerClick()}";
     }
 }
