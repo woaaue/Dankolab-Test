@@ -777,8 +777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 4012174195725230014, guid: 054c4394f7fe9db43b3f014b8baadde1, type: 3}
-  _minPoolSize: 50
-  _maxPoolSize: 150
+  _minPoolSize: 10
+  _maxPoolSize: 20
   _parent: {fileID: 304553044}
   _pacifier: {fileID: 1405464200}
 --- !u!114 &634397136
