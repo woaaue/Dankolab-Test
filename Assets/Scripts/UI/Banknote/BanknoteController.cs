@@ -35,6 +35,7 @@ public sealed class BanknoteController : MonoBehaviour
             banknote.Setup(GetDirection());
             banknote.gameObject.transform.localPosition = _position;
             banknote.gameObject.SetActive(true);
+            Debug.Log("spawn");
         },
         banknote =>
         {
@@ -59,7 +60,7 @@ public sealed class BanknoteController : MonoBehaviour
         );
 
         var directionX = new Vector2(
-            Random.Range(-Screen.width, Screen.width),
+            Random.Range(-_pacifier.rect.width / 2, _pacifier.rect.width / 2),
             pacifierPosition.y);
 
         return directionX;

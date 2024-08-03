@@ -1405,19 +1405,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1260902227}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1260902229}
-        m_TargetAssemblyTypeName: ButtonClicker, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1260902227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1739,8 +1727,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 4012174195725230014, guid: 054c4394f7fe9db43b3f014b8baadde1, type: 3}
-  _minPoolSize: 10
-  _maxPoolSize: 20
+  _minPoolSize: 25
+  _maxPoolSize: 50
   _parent: {fileID: 304553044}
   _pacifier: {fileID: 1405464200}
 --- !u!1 &1948807014

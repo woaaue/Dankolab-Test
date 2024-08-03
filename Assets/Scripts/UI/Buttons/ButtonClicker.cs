@@ -14,7 +14,7 @@ public sealed class ButtonClicker : MonoBehaviour, IPointerClickHandler
     [Inject] private MoneyController _moneyController;
     [Inject] private UpgradeController _upgradeController;
 
-    private float _alphaTreshHold = 0.1f;
+    private float _alphaTreshHold = 0.05f;
 
     private void Start()
     {
@@ -30,12 +30,6 @@ public sealed class ButtonClicker : MonoBehaviour, IPointerClickHandler
     }
 
     [UsedImplicitly]
-    public void Click()
-    {
-        _moneyController.AddMoney(_upgradeController.GetMoneyPerClick());
-    }
-
-    [UsedImplicitly]
     public void OnPointerClick(PointerEventData eventData)
     {
         Vector2 localPoint;
@@ -47,6 +41,7 @@ public sealed class ButtonClicker : MonoBehaviour, IPointerClickHandler
             out localPoint
         );
 
+        _moneyController.AddMoney(_upgradeController.GetMoneyPerClick());
         _banknoteController.SetSpawnPosition(localPoint);
     }
 
