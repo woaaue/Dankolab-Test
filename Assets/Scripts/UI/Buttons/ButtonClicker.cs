@@ -11,9 +11,9 @@ public sealed class ButtonClicker : MonoBehaviour, IPointerClickHandler
     [SerializeField] private TextMeshProUGUI _countAddMoney;
     [SerializeField] private RectTransform _canvasRectTransform;
 
-    [Inject] private BanknoteController _banknoteController;
     [Inject] private MoneyController _moneyController;
     [Inject] private UpgradeController _upgradeController;
+    [Inject] private BanknoteController _banknoteController;
 
     private float _alphaTreshHold = 0.05f;
 
