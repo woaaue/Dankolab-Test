@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEditor;
 using NaughtyAttributes;
+using JetBrains.Annotations;
 using System.Collections.Generic;
 
 [CreateAssetMenu(menuName = "Dankolab-Test/Settings/UpgradesSettings", fileName = "UpgradesSettings", order = 1)]
@@ -15,7 +16,7 @@ public sealed class UpgradesSettings : ScriptableObject
 
     [field: SerializeField] public List<UpgradeSettings> Upgrades { get; private set; }
 
-
+    [UsedImplicitly]
     [Button("Generate Upgrade Settings")]
     private void CreateUpgradesSettings()
     {
