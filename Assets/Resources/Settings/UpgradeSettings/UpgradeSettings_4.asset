@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeInfo:
     Level: 4
-    UpgradePrice: 60
+    UpgradePrice: 70
     PayPerClick: 5

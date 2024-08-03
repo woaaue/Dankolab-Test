@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272b17ff43da0534eae32fe629a7d0ca, type: 3}
   m_Name: UpgradesSettings
   m_EditorClassIdentifier: 
-  _countUpgrades: 30
-  _coefficientPrice: 1.2
+  <_countUpgrades>k__BackingField: 30
+  <_countMoneyPerClick>k__BackingField: 1
+  <_coefficientPrice>k__BackingField: 1.4
   <Upgrades>k__BackingField:
   - {fileID: 11400000, guid: 04795dc65d98fd64c89832cd29943d8c, type: 2}
   - {fileID: 11400000, guid: 04e5f8db6b1563341b3b1cbdada30b04, type: 2}
@@ -45,3 +46,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b7e96288ada4d8b4a9d5240bc0170245, type: 2}
   - {fileID: 11400000, guid: d66b339634dc06541a57b6915f7d792b, type: 2}
   - {fileID: 11400000, guid: d2c90f9e9c0ddd343a99d04ecd15d26a, type: 2}
+  - {fileID: 11400000, guid: 356c00120b4c827448a5d1f54f451288, type: 2}
