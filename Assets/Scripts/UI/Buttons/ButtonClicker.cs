@@ -21,7 +21,6 @@ public sealed class ButtonClicker : MonoBehaviour, IPointerClickHandler
     {
         _image.alphaHitTestMinimumThreshold = _alphaTreshHold;
 
-        OnMoneyPerClickChanged();
         _upgradeController.UpgradeSettingsChanged += OnMoneyPerClickChanged;
     }
 

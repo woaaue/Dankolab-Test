@@ -1,6 +1,9 @@
+using System;
+
+[Serializable]
 public sealed class Bank
 {
-    public int CurrentValue { get; private set; }
+    public int CurrentValue;
 
     public void IncreaseMoney(int value)
     {

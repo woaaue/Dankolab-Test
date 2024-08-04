@@ -15,7 +15,6 @@ public sealed class MoneyView : MonoBehaviour
         _countMoneyText = new StringBuilder();
 
         _controller.MoneyChanged += OnCountMoneyChanged;
-        OnCountMoneyChanged(_controller.GetMoney());
     }
 
     private void OnDestroy()

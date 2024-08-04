@@ -1,6 +1,9 @@
+using System;
+
+[Serializable]
 public sealed class LevelSystem
 {
-    public int CurrentLevel { get; private set; }
+    public int CurrentLevel;
 
     public void IncreaseLevel()
     {

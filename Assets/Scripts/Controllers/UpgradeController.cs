@@ -10,8 +10,23 @@ public sealed class UpgradeController : MonoBehaviour
 
     public event Action UpgradeSettingsChanged;
 
-    private LevelSystem _levelSystem = new LevelSystem();
+    private LevelSystem _levelSystem;
     private List<UpgradeSettings> _settings => SettingsProvider.Get<UpgradesSettings>().Upgrades;
+
+    private void Start()
+    {
+        _levelSystem = Storage.Load<LevelSystem>();
+
+        if (_levelSystem == null)
+            _levelSystem = new LevelSystem();
+
+        UpgradeSettingsChanged?.Invoke();
+    }
+
+    private void OnDisable()
+    {
+        Storage.Save(_levelSystem);
+    }
 
     public int GetCurrentLevel() => _levelSystem.CurrentLevel;
     public int GetMoneyPerClick() => _settings.First(setting => setting.UpgradeInfo.Level == GetCurrentLevel()).UpgradeInfo.PayPerClick;
