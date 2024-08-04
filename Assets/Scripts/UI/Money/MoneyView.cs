@@ -7,13 +7,15 @@ public sealed class MoneyView : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _countMoney;
 
-    [Inject] private MoneyController _controller;
+    private MoneyController _controller;
     private StringBuilder _countMoneyText;
 
-    private void Start()
+    [Inject]
+    public void Construct(MoneyController moneyController)
     {
-        _countMoneyText = new StringBuilder();
+        _controller = moneyController;
 
+        _countMoneyText = new StringBuilder();
         _controller.MoneyChanged += OnCountMoneyChanged;
     }
 

@@ -6,11 +6,12 @@ public sealed class LevelView : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _currentLevel;
     
-    [Inject] private UpgradeController _upgradeController;
+    private UpgradeController _upgradeController;
 
-    private void Start()
+    [Inject]
+    public void Construct(UpgradeController upgradeController)
     {
-        OnLevelChanged();
+        _upgradeController = upgradeController;
         _upgradeController.UpgradeSettingsChanged += OnLevelChanged;
     }
 
@@ -21,6 +22,6 @@ public sealed class LevelView : MonoBehaviour
 
     private void OnLevelChanged()
     {
-        _currentLevel.text = $"LV {_upgradeController.GetCurrentLevel()}";
+        _currentLevel.text = $" {_upgradeController.GetCurrentLevel()}";
     }
 }

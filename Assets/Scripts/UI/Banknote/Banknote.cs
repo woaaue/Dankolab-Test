@@ -5,7 +5,18 @@ public sealed class Banknote : MonoBehaviour
 {
     [SerializeField] private BanknoteAnimation _animation;
 
-    [Inject] BanknoteController _banknoteController;
+    BanknoteController _banknoteController;
+
+    [Inject]
+    public void Construct(BanknoteController banknoteController)
+    {
+        _banknoteController = banknoteController;
+    }
+
+    public void Setup(Vector2 _directionX)
+    {
+        _animation.CreateSequence(_directionX);
+    }
 
     private void OnEnable()
     {
@@ -15,11 +26,6 @@ public sealed class Banknote : MonoBehaviour
     private void OnDisable()
     {
         _animation.SequenceCompleted -= OnSequenceCompleted;
-    }
-
-    public void Setup(Vector2 _directionX)
-    {
-        _animation.CreateSequence(_directionX);
     }
 
     private void OnSequenceCompleted()

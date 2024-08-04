@@ -11,22 +11,19 @@ public sealed class ButtonClicker : MonoBehaviour, IPointerClickHandler
     [SerializeField] private TextMeshProUGUI _countAddMoney;
     [SerializeField] private RectTransform _canvasRectTransform;
 
-    [Inject] private MoneyController _moneyController;
-    [Inject] private UpgradeController _upgradeController;
-    [Inject] private BanknoteController _banknoteController;
-
     private float _alphaTreshHold = 0.05f;
+    private MoneyController _moneyController;
+    private UpgradeController _upgradeController;
+    private BanknoteController _banknoteController;
 
-    private void Start()
+    [Inject]
+    public void Construct(MoneyController moneyController, UpgradeController upgradeController, BanknoteController banknoteController)
     {
-        _image.alphaHitTestMinimumThreshold = _alphaTreshHold;
+        _moneyController = moneyController;
+        _upgradeController = upgradeController;
+        _banknoteController = banknoteController;
 
         _upgradeController.UpgradeSettingsChanged += OnMoneyPerClickChanged;
-    }
-
-    private void OnDestroy()
-    {
-        _upgradeController.UpgradeSettingsChanged -= OnMoneyPerClickChanged;
     }
 
     [UsedImplicitly]
@@ -43,6 +40,16 @@ public sealed class ButtonClicker : MonoBehaviour, IPointerClickHandler
 
         _moneyController.AddMoney(_upgradeController.GetMoneyPerClick());
         _banknoteController.SetSpawnPosition(localPoint);
+    }
+
+    private void Start()
+    {
+        _image.alphaHitTestMinimumThreshold = _alphaTreshHold;
+    }
+
+    private void OnDestroy()
+    {
+        _upgradeController.UpgradeSettingsChanged -= OnMoneyPerClickChanged;
     }
 
     private void OnMoneyPerClickChanged()

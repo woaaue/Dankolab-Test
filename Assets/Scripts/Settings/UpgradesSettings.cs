@@ -17,6 +17,7 @@ public sealed class UpgradesSettings : ScriptableObject
 
     [field: SerializeField] public List<UpgradeSettings> Upgrades { get; private set; }
 
+#if UNITY_EDITOR
     [UsedImplicitly]
     [Button("Generate Upgrade Settings")]
     private void CreateUpgradesSettings()
@@ -66,4 +67,6 @@ public sealed class UpgradesSettings : ScriptableObject
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
     }
+
+#endif
 }

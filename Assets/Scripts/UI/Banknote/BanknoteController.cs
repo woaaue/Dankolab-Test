@@ -13,15 +13,15 @@ public sealed class BanknoteController : MonoBehaviour
 
     private Vector2 _position;
 
-    public void Start()
-    {
-        CreatePool();
-    }
-
     public void SetSpawnPosition(Vector2 position)
     {
         _position = position;
         Pool.Get();
+    }
+
+    private void Start()
+    {
+        CreatePool();
     }
 
     private void CreatePool()

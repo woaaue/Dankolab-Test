@@ -21,7 +21,7 @@ public sealed class BanknoteAnimation : MonoBehaviour
             });
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
         _sequence.Play();
     }

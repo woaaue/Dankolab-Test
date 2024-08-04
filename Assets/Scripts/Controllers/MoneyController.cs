@@ -7,21 +7,6 @@ public sealed class MoneyController : MonoBehaviour
 
     private Bank _bank;
 
-    private void Start()
-    {
-        _bank = Storage.Load<Bank>();
-
-        if (_bank == null)
-            _bank = new Bank();
-
-        MoneyChanged?.Invoke(GetMoney());
-    }
-
-    private void OnDisable()
-    {
-        Storage.Save(_bank);
-    }
-
     public void AddMoney(int value)
     {
         _bank.IncreaseMoney(value);
@@ -40,4 +25,19 @@ public sealed class MoneyController : MonoBehaviour
     }
 
     public int GetMoney() => _bank.CurrentValue;
+
+    private void Start()
+    {
+        _bank = Storage.Load<Bank>();
+
+        if (_bank == null)
+            _bank = new Bank();
+
+        MoneyChanged?.Invoke(GetMoney());
+    }
+
+    private void OnDisable()
+    {
+        Storage.Save(_bank);
+    }
 }

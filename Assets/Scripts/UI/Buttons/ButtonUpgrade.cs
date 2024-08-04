@@ -8,17 +8,16 @@ public sealed class ButtonUpgrade : MonoBehaviour
     [SerializeField] private GameObject _buttonUpgrade;
     [SerializeField] private TextMeshProUGUI _priceUpgrade;
     
-    [Inject] private MoneyController _moneyController;
-    [Inject] private UpgradeController _upgradeController;
+    private MoneyController _moneyController;
+    private UpgradeController _upgradeController;
 
-    private void Start()
+    [Inject]
+    public void Construct(MoneyController moneyController, UpgradeController upgradeController)
     {
+        _moneyController = moneyController;
+        _upgradeController = upgradeController;
+
         _moneyController.MoneyChanged += ButtonStateSwitcher;
-    }
-
-    private void OnDestroy()
-    {
-        _moneyController.MoneyChanged -= ButtonStateSwitcher;
     }
 
     [UsedImplicitly]
@@ -28,11 +27,16 @@ public sealed class ButtonUpgrade : MonoBehaviour
         ButtonStateSwitcher();
     }
 
+    private void OnDestroy()
+    {
+        _moneyController.MoneyChanged -= ButtonStateSwitcher;
+    }
+
     private void ButtonStateSwitcher(int currentMoney = 0)
     {
         if (_moneyController.GetMoney() >= _upgradeController.GetPriceUpgrade())
         {
-            _priceUpgrade.text = $"Upgrade: {_upgradeController.GetPriceUpgrade()}";
+            _priceUpgrade.text = $" {_upgradeController.GetPriceUpgrade()}";
             _buttonUpgrade.SetActive(true);
         }
         else
