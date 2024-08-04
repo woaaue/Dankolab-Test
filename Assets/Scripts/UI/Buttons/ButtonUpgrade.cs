@@ -36,7 +36,7 @@ public sealed class ButtonUpgrade : MonoBehaviour
     {
         if (_moneyController.GetMoney() >= _upgradeController.GetPriceUpgrade())
         {
-            _priceUpgrade.text = $" {_upgradeController.GetPriceUpgrade()}";
+            _priceUpgrade.text = $"Upgrade: {_upgradeController.GetPriceUpgrade()}";
             _buttonUpgrade.SetActive(true);
         }
         else

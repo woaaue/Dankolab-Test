@@ -22,6 +22,6 @@ public sealed class LevelView : MonoBehaviour
 
     private void OnLevelChanged()
     {
-        _currentLevel.text = $" {_upgradeController.GetCurrentLevel()}";
+        _currentLevel.text = $"LV {_upgradeController.GetCurrentLevel()}";
     }
 }
